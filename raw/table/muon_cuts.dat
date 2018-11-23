@@ -1,0 +1,10 @@
+Cut	\Pgm Signal	\Pgm Pileup
+$p_T$ > 4	\num{1.871+-0.004e5}	\num{4.62+-0.02e4}\\
+$E_{xy} < \SI{0.005}{\cm}$	\num{1.723+-0.004e5}	\num{3.82+-0.02e4}
+After all previous cuts:	$empty	$empty
+barrel	\num{1.101+-0.003e5}	\num{2.19+-0.01e4}
+endcap	\num{6.21+-0.02e4}	\num{1.64+-0.01e4}
+$\SI{4}{\GeV}<p_T<\SI{5}{\GeV}$	\num{4.25+-0.02e4}	\num{1.65+-0.01e4}
+$\SI{5}{\GeV}<p_T<\SI{7}{\GeV}$	\num{5.54+-0.02e4}	\num{1.35+-0.01e4}
+$\SI{7}{\GeV}<p_T<\SI{10}{\GeV}$	\num{3.84+-0.02e4}	\num{5.25+-0.07e3}
+$\pt > \SI{10}{\GeV}$	\num{3.60+-0.02e4}	\num{2.97+-0.05e3}

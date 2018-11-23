@@ -1,0 +1,15 @@
+\subsubsection{Conditional observables}
+\label{subsubsec:cond_obs}
+
+A Probability Density Function (PDF) G is called a conditional PDF if it describes the distribution of one or more observables X \textit{given} the value of an observable y.
+We denote such a PDF with $G(X|y)$. 
+While mathematically G is still a function of X and y, the normalization is different in the two cases:
+\begin{itemize}
+	\item G(x,y) is normalized as $\int\int G(x,y)\dd{X}\dd{y} = 1$
+	\item G(x|y) is normalized as $\int G(x|y)\dd{X} = 1 \quad \forall y$
+\end{itemize}
+The observable y is called a conditional observable for the PDF G.
+
+During a fit we usually input the distribution as a simple function of X and y and it is necessary to specify wether some of the variables are to be used as conditionals.
+This means that we are not interested in estimating the distribution of this particular observables, but they act as spectators, integrated numerically from the data to normalize the rest of the distribution.
+

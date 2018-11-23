@@ -1,0 +1,18 @@
+\subsection{\pt/\psrap/\polang coordinates}
+
+In collider physics we often work in an environment with an obvious simmetry: the beam axis.
+When choosing a coordinate system one would be tempted to use spherical or cilindrical coordinates.
+Unfortunately these corrdinates are not invariant with respect to lorentz transformations, making it unsuitable to use.
+
+A common base used is instead the $\pt\psrap\polang$.
+This three variables are related to the spherical coordinates $p\theta\polang$ with the formulas
+
+
+\begin{align}
+	\pt&=p\cdot\sin{\theta}\\
+	\psrap&=-\ln(\tan{\frac{\theta}{2}})=\mathrm{arctanh}\left(\frac{p_L}{|p|}\right)\\
+	\polang&=\polang
+	\label{eq:pt_eta_phi}
+\end{align}
+
+The advantage of this coordinate system is that difference in \psrap, unlike difference in $\theta$ are Lorentz invariants for boosts along the beam axis.

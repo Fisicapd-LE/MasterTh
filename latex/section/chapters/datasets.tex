@@ -1,0 +1,61 @@
+\section{Samples used}
+\label{sec:data}
+
+During the analysis we used 4 different datasets, 3 Monte Carlo samples as a model for the fit and one data sample, all from the year 2016.
+
+The Monte Carlo samples are dataset generated for other parallel analysis.
+Each of them is generated so that every event contains at least one secondary vertex of a specific decay, which is used as a label for the dataset.
+The used datasets are
+\begin{itemize}
+	\item $\PsB\to\PJgy\Pgf\to\Pgmp\Pgmm\PKp\PKm$, \num{\sim 100e6} events, \num{2.825e7} after secondary vertex reconstruction
+	\item $\PBp\to\PJgy\PKp\to\Pgmp\Pgmm\PKp$, \num{\sim 20e6} events, \num{7.986e6} after SV reconstruction
+	\item $\PBz\to\PJgy\PKst\to\Pgmp\Pgmm\PKpm\Pgpmp$, \num{\sim 73e6} events, \num{1.9734e7} after SV reconstruction
+\end{itemize}
+
+The data sample is the union of all the so called "Charmonium" datasets collected in the year 2016.
+This means that they contain only events that passed a specific set of High Level Triggers (HLT).
+Every high level trigger is a set of selections that can be computed extremely fast in a computer farm, as these triggers are executed online during the acquisition and are used to decide if a specific event is worth being stored or not.
+In the case of the Charmonium dataset the triggers are designed to ensure the presence of at least one charmonium meson decayin ito two \Pgm inside the event.
+
+In each dataset we had to chose one of the three possible decays (as explained in the previous section) to reconstruct.
+In the MC samples we simply reconstructed the required decay, to maximize the number of events not rejected.
+In the data sample we instead chose to reconstruct the $\PBp\to\PJgy\PKp$ decay, as of the three decays it's, the most likely to occur.\\
+
+After a first skim, that only selected events with the required decay, some additional selections are applied on the events.
+
+The first one is a selection on the HLT, to reduce background. 
+We require that each event passed a trigger that is internally called HLT\_DoubleMu4\_JpsiTrk\_Displaced.
+The trigger requires that in the event there are:
+\begin{itemize}
+	\item Two \Pgm with total invariant mass close to that of the \PJgy (in a window of \SI{150}{\MeV} around it), forming a common vertex fitted with a probability $P>\SI{10}{\percent}$
+	\item The vertex has a distance from the beam spot $L_{xy}$ in the transversal plane greater than 3 times its error.
+	\item The cosine of the angle between $L_{xy}$ and the total momentum of the \Pgm is greater than 0.9 (we don't want this cut to be strict, since it's considering only the \PJgy momentum instead of the full B-meson)
+	\item An extra track, with $\pt > 0.8$, compatible with the \Pgm's vertex with a $\frac{\chi^2}{\text{NDF}} > 10$. No extra requirements are made on this vertex
+\end{itemize}
+\draft{Apetto ancora alessio per conferma sui numeri}
+
+The second set of cuts applied are quality cuts for the main secondary vertex at the offline analysis stage.
+These cuts include
+\begin{itemize}
+	\item $\cos{\alpha}< 0.99$, with $\alpha$ angle between the secondary vertex direction (computed as the 3d distance between \Pp\Pp interaction point and B decay vertex) and the total momentum of the tracks from the decay. This is a measure of how much momentum we are missing from the decay, to notice potential missing tracks.
+	\item Vertex fit probability $ P > \SI{10}{\percent}$.
+	\item Distance from the beam axis greater than 3 times the error on it. Since B-meson have a relatively long mean life, with this cut we can reject combinatorial background from prompt \PJgy production.
+	\item Total $p_T$ of the meson greater than \SI{10}{\GeV}.
+	\item Total $p_T$ of the \PJgy from the decay greater than \SI{8}{\GeV}.
+	\item Each \Pgm from the \PJgy decay with $p_T$ greater than \SI{4}{\GeV} and $\eta$ smaller than \num{2.2}.
+\end{itemize}
+
+Table \ref{tab:ssb_cuts} shows a summary of the efficiency of the cuts applied on the secondary vertex.
+
+\inputtab{ssb_cuts}
+
+\inputgraph{bmass}
+
+Further cuts are applied on the additional \Pgm collected in the events.
+We require the \Pgm to have $p_T>\SI{4}{\GeV}$ and error on the impact parameter $E_{xy} < \SI{0.005}{\cm}$.
+We can see in Table \ref{tab:muon_cuts} the effect these selection make on signal or pileup \Pgm.
+Additionally, the last rows show the abundance of signal and pileup \Pgm, after selections, in the $p_T$ and $\eta$ windows we use during the analysis.
+
+\inputtab{muon_cuts}
+
+\subload{checks}

@@ -1,0 +1,14 @@
+\newlength{\alphabet}
+\settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+
+\usepackage[
+	hmargin=0.18\paperwidth,	% metti la larghezza del testo (margini orizzontali) al 18% del foglio
+	textwidth=3.5\alphabet,  	% http://tex.stackexchange.com/questions/59626/nicely-force-66-characters-per-line
+	%hmarginratio=1:1,       	% margini destro e sinistro uguali
+	%left=2cm,
+	%right=2cm,
+	%top=2cm,	            	% margine sopra a 32mm...
+	%bottom=2cm       	% quello sotto uguale (default 2:3)
+	%columnsep=20pt          	% Spazio tra le colonne?
+]%
+{geometry} % Document margins

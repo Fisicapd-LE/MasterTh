@@ -1,0 +1,18 @@
+\subsection{Fake \Pgm impact parameter model}
+\label{subsec:fake_model}
+
+We showed before that the fake \Pgm impact parameter model is different in the each of the MC samples. 
+This also means that we cannot rely on it when fitting on data, as it is very likely to be different as well.
+
+Our MVA has on the other hand given a good way to discriminate fake \Pgm from real ones: if we take \Pgm whose fake MVA value is low enough (less than a threshold, selected to be 0.2 from the MVA output distributions), we are selecting a subsample that is largely composed of fake \Pgm.
+When using this method a problem may arise: we need to be certain that the mva cut will not alter the impact parameter distribution.
+
+Using Monte Carlo samples, we compute the ratio the fake impact parameter distribution and the distribution of \Pgm failing the MVA selection.
+We want this ratio to be costant, at least in the \dxy region that we consider.
+
+The two distributions superimposed are shown in \autoref{gr:mva_fakes}, while their ratio in \autoref{gr:mva_fakes_ratio}.
+
+\inputgraph{mva_fakes}
+\inputgraph{mva_fakes_ratio}
+
+The ratio was found to be sufficiently constant (high probability for the costant fit), so the method was successfully used in the following parts of the analysis.

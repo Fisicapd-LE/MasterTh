@@ -1,0 +1,25 @@
+\subsubsection{B-hadrons $ct$}
+\label{subsubsec:mc_ct}
+
+We first check that the B meson are generated with the correct lifetime as reported in the Particle Data Book (PDG), by fitting the proper decay time for each B hadron, which can be easily computed from the generation information.
+\draft{which mi pare corretto, si rifereisce al proper decay time}
+
+The algorithm iterated on all the B-hadrons in each event of the datasets and collected each decay time in histograms separed by particle type (including charge).
+The histograms were then fitted with an exponential distribution, and the parameters from the fit were compared to the tabulated mean life of the particle.
+
+%Initially the fits showed that each meson had a biased decay distribution whenever its decay was taken as main vertex of the event (\autoref{gr:bu_bct_521_biased}), with a distribution that was not purely exponential.
+%This is explained by the relative rarity of the B-decays: the main reconstructed decay represents a large part of the available statistics for its flavour, especially in more rare particles such as the \PsB, where this behaviour was accentuated.
+%In MC samples the main decay is usually the one that is requested in production and is thus biased by the additional requests specific of each sample.
+%To avoid biases induced by the requirement in the event generation, we should exclude from this analysis the main meson of the MC event.
+%Unfortunately this information is not available in the datasets.
+%We instead ignore the mesons that we use as fully reconstructed meson of the event (the one we use for our main analysis). 
+%Since for MC we always reconstruct the same rare decay that is required during generation, the main reconstructed vertex is usually also the main generated one.
+%By excluding the reconstructed meson we are thus able to completely remove the bias.
+%\draft{non e' il trigger, almeno non credo, e' la generazione. E non abbiamo escluso in non trigger matched, abbiamo escluso quelli che non consideriamo il principale completamente ricostruito}
+We exclude from each event the meson that would trigger our reconstruction, as its decay time would be biased.
+
+%TODO add gr:bu_bct_521_biased
+The fit results are nicely compatible with the world average for each B hadron considered, as shown in \autoref{gr:ct} and \autoref{tab:ct}, for both particles and antiparticles.
+
+\inputgraph{ct}
+\inputtab{ct}

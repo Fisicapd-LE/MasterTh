@@ -1,0 +1,7 @@
+./*.pdf
+backup/*.pdf
+latex/graph/*.tex
+latex/img/*.tex
+latex/table/*.tex
+info
+**/*.aux

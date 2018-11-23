@@ -1,0 +1,25 @@
+\subsubsection{Relation between muon impact parameter and its ancestor's proper decay time}
+
+We stated in \autoref{subsec:th_impact_par} that the impact parameter of a \Pgm is supposed to be on average equal to its ancestor particle proper decay length.
+We want now to check if this holds even at lower \pt (our minimum \pt is \SI{4}{\GeV}).
+
+The plots were made iterating over each \Pgm in the events and extracting its ancestor using the generation information..
+
+Two series of plots are presented
+\begin{itemize}
+	\item a 2D plot of the B hadron proper decay time versus the \Pgm impact parameter, to evidence the correlation between the two.
+	\item 1D plots of the difference between the two variables, optionally normalized over the precision in the impact parameter measure. The resulting distribution should be centered around 0 and if normalized it should be a normal distribution..
+\end{itemize}
+
+The 2D plot is shown in \autoref{gr:dxy_ct}, in double logaritmic axis.
+
+\inputgraph{dxy_ct}
+
+The plots for the difference of the two variables are shown in \autoref{gr:all_dxy_res}, and normalization is added in \autoref{gr:all_dxy_res_norm}.
+These plots are asymmetric as our range of \pt is far lower than the values where the two converge (\SI{\sim 40}{\GeV}) and low energy terms cannot be neglected..
+
+\inputgraph{all_dxy_res}
+
+\inputgraph{all_dxy_res_norm}
+
+From the normalized plots we can see that the actual precision in the measure is small compared to the error in the impact parameter, as evidenced by the large variance of the distribution, that when normalized should be similar to 1.

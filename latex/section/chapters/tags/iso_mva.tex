@@ -1,0 +1,60 @@
+\subsection{Tag: isolation}
+\label{subsec:tag_iso}
+
+In our analysis of the MC samples we noticed that the isolation appeared to be a good tag to select direct \Pgm from other \Pgm categories.
+
+Isolation is a variable quantifying how many separate tracks are found around the \Pgm from its same PV, weighted by their momentum.
+It is defined as 
+
+\begin{equation}
+	I=\frac{\pt}{\sum_{i\in dR<0.4,i\neq\mu} p_{T,i}}
+	\label{eq:inv_iso}
+\end{equation}
+
+where the summation is performed over the tracks that are inside what we call a $\Delta\eta\Delta\varphi$ cone of 0.4 width from the \Pgm, meaning that 
+
+$$\Delta R\left(i, \mu\right) = \sqrt{\left(\eta_i-\eta_\mu\right)^2+\left(\varphi_i-\varphi_\mu\right)^2} < 0.4$$.
+
+When there are no tracks inside the cone, ths isolation diverges and the \Pgm is said to be fully isolated.
+
+As we can see in \autoref{tab:iso_counts}, isolated \Pgm are naturally enriched in signal. S/N ratio can be improved in the non isolated data by considering further tags.
+We need now a way to give the same estimation for non isolated \Pgm.
+
+\inputtab{iso_counts}
+
+The chosen method was to use two additional variables, the cone charge \cc
+
+\begin{equation}
+	\cc=\frac{\sum_{i\in dR<0.4} q_i\cdot p_{T,i}^{1.5}}{\sum_{i\in dR<0.4} p_{T,i}^{1.5}}
+	\label{eq:cone_cha}
+\end{equation}
+
+and the cone \dr
+
+\begin{equation}
+	\dr=\Delta R\left(p_\mu,\sum_{i\in dR<0.4,i\neq\mu}\vec{p_i}\right)
+	\label{eq:cone_dr}
+\end{equation}
+
+These variables, together with the isolation defined in \autoref{eq:inv_iso} are used as input for a second MVA method, another DNN.
+The DNN was trained on part of the $\PBz\to\PJgy\PKst$ sample, selecting only additional non fully isolated \Pgm (not coming from the decay $\PJgy$) with $\pt > \SI{4}{\GeV}$.
+After all the cuts, we used half of the remaining \Pgm for the training sample and half of them for the test sample, where we verified tha absence of overtraining.
+Normally training and using the MVA on the same data (even if only part of it) should be avoided, as this would potentially introduce a bias in the efficiency (the MVA will necessarily perform better on the sample it was trained on) and the distributions, but thanks to the overtraining checks during the training and the low fraction of \Pgm used the distributions resulted the same both in the training sample and the full sample.
+The training used the direct \Pgm as signal and the other categories as background, as this was the most important distinction that we were able to find in the input variables (\cc and \dr show extremely similar distributions for indirect \Pgm, charm \Pgm and fakes).
+
+The distribution of the input variables is show in \autoref{app:iso_mva_input}.
+
+The models are obtained from data using the same process defined in \autoref{subsec:tag_fake_mva}, and are shown in \autoref{gr:iso_mva_all}.
+
+\draft{non li ho pronti, solo separati e non mi pare il caso}
+
+\inputgraph{inviso_full_example}
+
+An important fact to note is that the isolation from \autoref{eq:inv_iso} has separate distributions in each of the 4 categories (see \autoref{gr:inviso_full_example} as an example), a fact that is propagated inside the MVA, even if the DNN was trained with only two super-categories, direct \Pgm and the rest.
+This distinction was found to be necessary when fitting, as the composition of what in this MVA is called background (indirect \Pqb \Pgm, \Pqc \Pgm and fakes) is not the same in the data or Monte Carlo, leading to a different distribution for the super-category.
+The output of the MVA can be thus used similarly to the impact parameter, returning an estimante of every single component of the distribution.
+On real data though, the high correlation between the background components stopped us from relying on that information, using the fit, together with the full isolated \Pgm information, only as a starting point for the subsequent one and as a constraint for weights of the direct component and the rest of the \Pgm.
+
+All the distributions shown present a sharp peak at high values of the MVA.
+The reason for the peak is to be found in the \cc distribution: when all the tracks in the cone have all the same charge, \cc simply converges to $\pm 1$.
+Since the number of tracks in the cone is usually not too high \draft{(quantify later, can't do it before tomorrow morning)}, it's unlikely to have a \cc value close to a round value, leading to well defined and isolated peaks at $\pm 1$ that are propagated (as absolute value) to the MVA.

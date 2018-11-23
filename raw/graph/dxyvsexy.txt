@@ -1,0 +1,1 @@
+Full range  of \dxy showing the behaviour at low values. The slices are at different windows of \exy. All the graphs are normalized to 1 to highlight the common behaviour

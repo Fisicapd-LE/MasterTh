@@ -1,0 +1,15 @@
+\usepackage{iftex}
+\input{latex/preamble/packages/packages_essential.tex}
+
+\input{latex/preamble/packages/packages_general.tex}
+\RequireLuaTeX
+
+\ifLuaTeX
+  \input{latex/preamble/packages/packages_lualatex.tex}
+\else
+  \ifXeTeX
+    \input{latex/preamble/packages/packages_lualatex.tex}
+  \else
+    \input{latex/preamble/packages/packages_pdflatex.tex}
+  \fi
+\fi

@@ -1,0 +1,17 @@
+\subsection{Fit method}
+\label{subsec:fit_method}
+
+All the fits presented in the next sessions are done minimizing an unbinned likelyhood, using the models obtained in \autoref{sec:tags}.
+The main free parameters used in the fits are the weights of the various componentsof the distribution.
+
+For signal \Pgm it is enough to add the parameter as coefficient in a linear combinations of the model.
+The result of the fit outputs the weight of our distribution in the sample.
+
+For pileup \Pgm we need to account for another problem: the parameter we need as output for the fit is not the total number of \Pgm, but the total number of \Pgm normalized by the number of primary vertices in the event (see \autoref{eq:final_method}).
+When fitting in this region we used the substitution $N_{\{\mu,fake\}}\to N_{\{\mu,fake\}, norm}\cdot \left(N_{PV}-1\right)$ and fitted the data using $N_{PV}$ as a conditional observable (more on this below).
+The output of $N_{\{\mu,fake\}, norm}$ from the fit is then correctly normalized value for the category weight.
+Another method that was ipotized was weighting each \Pgm with a factor of $w=\frac{1}{N_{PV}-1}$, but while this worked for the two MVA fits, it was causing problems when fitting the impact parameter, where the reduced weight of the pileup sample interfered with the simultaneous estimation of the common parameters.
+Regardless of the method used for this calculation, it was important to verify that the added weight did not introduce biases.
+Comparing the normalized distributions before and after the weighting showed no difference \draft{(grafico utile?)}, allowing us to continue.
+
+\subload{cond_obs}

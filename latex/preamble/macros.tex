@@ -1,0 +1,14 @@
+\usepackage{iftex}
+\input{latex/preamble/macros/macros_essential.tex}
+
+\ifLuaTeX
+  \input{latex/preamble/macros/macros_lualatex.tex}
+\else
+  \ifXeTeX
+    \input{latex/preamble/macros/macros_lualatex.tex}
+  \else
+    \input{latex/preamble/macros/macros_pdflatex.tex}
+  \fi
+\fi
+
+\input{latex/preamble/macros/macros_general.tex}

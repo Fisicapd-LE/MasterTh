@@ -1,0 +1,1 @@
+Fractions of muons in each category in the MC samples. These values refer to the whole sample, ignoring differences in \psrap, \dz or \pt

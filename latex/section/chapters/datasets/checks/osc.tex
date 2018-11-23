@@ -1,0 +1,41 @@
+\subsubsection{Flavour oscillations}
+\label{subsubsec:mc_osc}
+
+We then test the oscillation frequency for \PBz and \PsB mesons, by comparing the proper decay time distributions for mixed and unmixed mesons, see \autoref{gr:bs_bct_511_osc} for Bd and \autoref{gr:bs_bct_531_osc} for Bs mesons.
+
+\inputgraph{bs_bct_511_osc}
+\inputgraph{bs_bct_531_osc}
+
+We then compute the asimmetry between the two histograms.
+The asimmetry is defined as
+
+\begin{equation}
+	H_{asymm} = \frac{H_1-H_2}{H_1+H_2}
+	\label{eq:asymm}
+\end{equation}
+
+We expect the histogram of unoscillated meson to b proportional to 
+
+\begin{equation}
+	H_{unosc} \propto \text{e}^{-\frac{t}{\tau}}\cdot\frac{(1+\cos{\omega t})}{2}
+	\label{eq:nosc}
+\end{equation}
+
+where $\tau$ is the mean life of the meson and $\omega$ is its oscillation rate, and the histogram of oscillated meson to be proportional to
+
+\begin{equation}
+	H_{osc} \propto \text{e}^{-\frac{t}{\tau}}\cdot\frac{(1-\cos{\omega t})}{2}
+	\label{eq:yosc}
+\end{equation}
+
+The asimmetry between the two is then
+
+\begin{equation}
+	H_{asymm} = \frac{H_{unosc}-H_{osc}}{H_{unosc}+H_{osc}} = \frac{\frac{(1+\cos{\omega t})}{2} - \frac{(1-\cos{\omega t})}{2}}{\frac{(1+\cos{\omega t})}{2}+\frac{(1-\cos{\omega t})}{2}} = \cos{\omega t}
+	\label{eq:osc_asymm}
+\end{equation}
+
+The resulting asimmetry histograms are showed in Figure \ref{gr:all_osc}, where a fit with a cosine is overlayed, showing the extremely good fit between data and model.
+
+\draft{utili qua tutte le oscillazioni?}
+\inputgraph{all_osc}

@@ -1,0 +1,1 @@
+Generated ct from Monte Carlo information, for meson that oscillated an even or odd number of times. In this example the \PsB mesons

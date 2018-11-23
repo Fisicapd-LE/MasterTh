@@ -1,0 +1,77 @@
+\subsubsection{Definition}
+\label{subsubsec:th_impact_par}
+
+Most of the analysis is based on a quantity called impact parameter.
+This is a reconstructed variable linked to tracks, commonly used in collider physics.\\
+
+The impact parameter of a track is the distance of closest approach to some reference point, usually taken as the interaction point, or primary vertex, of the two protons that generated the particle. 
+It allows distinguishing, on a statistical basis, particles produced from the primary interaction vertex from those originated by the decay of a long-lived hadron, as explained below.\\
+
+If a particle created in the primary vertex lives for a time $t$, its decay length in the lab frame is given by
+
+\begin{equation}
+	l = \gamma\beta c t
+	\label{eq:decay_length}
+\end{equation}
+
+where $\beta$ and $\gamma$ are the relativistic parameters (respectively $\beta = \frac{v}{c}$ e $\gamma = \frac{1}{\sqrt{1-\beta^2}} = \frac{E}{m c^2}$).
+If this particles decays, we define the trasversal impact parameter of any daughter particle with respect to the primary vertex as 
+
+\begin{equation}
+	d_{xy} = l\sin{\theta}\sin{\psi} = \gamma\beta c t\sin{\theta}\sin{\psi} = \frac{\gamma\beta c t\sin{\psi}}{\cosh{\eta}}
+	\label{eq:impact_par}
+\end{equation}
+using $\eta$ as defined before and $\psi$ as the angle between the direction of the momentum of the mother (also called ancestor) particle and that of the daughter.
+
+\inputimg{dxy}
+
+An important feature of the impact parameter, and the main motivation for out use ot it in the analysis, is that as the parent particle becomes highly relativistic, the daughter's impact parameter becomes insensitive to the parent particle momentum.
+This is caused by the cancellation between the decay length, which increases with higher momentum (the factor $\gamma$ in \ref{eq:impact_par}) and the decay angle, which decreases with higher momentum due to the lorentz boost.
+
+Let's assume that the daughter particle's mass s small compared to that of the parent, a good approximation in our case, when the daughter particle is a \Pgm and the parent is usually an heavy quark such as \Pqc or \Pqb.
+Applying a boost to move from the parent particle (trasversal) rest frame to the laboratory, the $\sin{\psi}$ factor transform as
+
+\begin{equation}
+	\sin{\psi}=\frac{\sin{\psi_{CM}}}{\gamma\left(1+\beta\cos{\psi_{cm}}\right)};\quad 0<\psi_{cm}<\pi
+	\label{eq:sin_boost}
+\end{equation}
+
+If we insert this inside Equation \ref{eq:impact_par} the $\gamma$ terms cancel, yelding
+
+\begin{equation}
+	d_{xy} = \frac{\beta c t\sin{\psi_{cm}}}{\cosh{\eta}\left(1+\beta\cos{\psi_{cm}}\right)};\quad 0<\psi_{cm} < \pi
+	\label{eq:impact_par_boosted}
+\end{equation}
+
+In case of high \pt, when we can approximate $\beta$ to 1, the expression becomes
+
+\begin{equation}
+	b\approx\frac{\beta c t\tan{\frac{1}{2}\psi_{cm}}}{\cosh{\psrap}};\quad 0<\psi_{cm} < \pi
+	\label{eq:impact_par_boosted_highpt}
+\end{equation}
+
+which, as we can see, does not depend on the momentum of the parent particle.
+
+In \fig{gr:dxyvsct_theo} we can see the average of the ratio of the impact parameter and the parent particle lifetime as a function of the mother \pt.
+As we can see, the ratio converges to 1 as \pt increases.\\
+
+\inputgraph{dxyvsct_theo}
+
+Usually, a sign is given to the impact parameter, based upon the apparent origin of the track.
+The sign will be negative if the track appears to come from behind the interaction point and positive otherwise. 
+This definition is referred as physically-signed inpact parameter.
+This is particularly useful for heavy quark events, like the \Pqb, where the impact parameter are swept forward by the B's large boost into the hemisphere defined by the B direction.
+
+The problem with this approach is that it requires the knowledge of the B-hadron direction before the decay, which in general is hard to obtain without reconstructing the whole decay process.
+
+If the daughter particle belongs to a jet, the direction can be computed using the jet direction, usually defined as \draft{come e' definito jetP nel codice di Paolo?}.
+
+%If that was not possible either, our algorithm was programmed to use an average of the trasversal momenta of the particles close to it (in an interval in $\eta$ and $\varphi$ defined as \(\sqrt{\eta^2+\varphi^2} < 0.4\), a commonly used limit in particle physics).
+%This should pull in the other daughter particles from the decay and has
+\draft{Abbiamo anche provato un secondo algoritmo di "fallback", diciamo, che faceva la media dei momenti delle traccie in un intervallo dr<0.4, ma e' piu' difficile da giustificare e in ogni caso il nostro paramettro di impatto sara' privo di segno alla fine, ritego poco utile spiegare questo secondo algoritmo.}\\
+
+We saw from our the data that the signing algorithm had low probability of correctly signing the impact parameter (see \fig{gr:signed_dxy} \draft{maybe}), at least for the events that we selected.
+It was for this reason decided to work only on the absolute value.
+
+
+

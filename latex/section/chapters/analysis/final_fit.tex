@@ -1,0 +1,31 @@
+\subsection{Final fit}
+\label{subsec:final_fit}
+
+The main analysis of the thesis is the impact parameter fit. 
+
+Unlike the MVA, here our models are analytical, with parameters that we estimated from MC. 
+To avoid sistematic errors due to an imprecise estimation of the parameter of the models, we allow the model parameters to float around their computed values.
+We add instead gaussian constraints in each parameter, to force it to stay close to its initial value, with the constraint sigma taken from the estimated error in the models fit.
+This removes a source sistematic errors at the cost of increasing the statistical one and the complexity of the fit.
+
+Since we are forced to assume the same model for signal and pileup, we cannot allow the model parameters to float differently in the two subsamples. 
+The two models used in the fit have thus shared parameters and the fit is executed simultaneously for both of them.
+This is the reason why the second method in \autoref{subsec:fit_method} was discarder: if we lowered the weight of the pileup \Pgm, the shared parameters would converge to values accomodating the signal much more, leaving the pileup inappropriate parameters that do not follow its shape.
+
+\inputgraph{imppar_barrel}
+\inputgraph{imppar_endcap}
+
+The fits of each window of \pt, \psrap and $\mathrm{d}z$ are shown in \autoref{gr:imppar_barrel} and \autoref{gr:imppar_endcap}.
+In the figures the read area represents fake \Pgm, the green area \Pgm from \Pqc quarks and the white area the \Pgm from \Pqb quarks.
+
+Here result, still in flux.
+
+\draft{%
+The number of \Pqb \Pgm is then summated in all the windows.%
+And in the end the ratio is computed.%
+}
+
+\draft{%
+The total number of \Pgm for signal or background is calculated as a sum of the windows, and its error as a quadrature sum of the errors. %
+This should work because they are fully independent samples, but I would prefer a good talk on errors here, and also with the ratio error.%
+}

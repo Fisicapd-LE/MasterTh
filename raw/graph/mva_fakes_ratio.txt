@@ -1,0 +1,1 @@
+Ratio between the two distributions in \autoref{gr:mva_fakes}, with a constant fit

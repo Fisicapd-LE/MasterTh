@@ -1,0 +1,1 @@
+Informations about fully isolated muons. First column is the fraction of muons in that category which are isolated, second is the composition of the isolated sample and the third is the composition of the full sample, for comparison.

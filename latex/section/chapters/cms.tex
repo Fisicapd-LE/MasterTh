@@ -1,0 +1,59 @@
+\section{The CMS detector}
+
+CMS (Compact Muon Solenoid) is one of the two general purpose detectors active at the Large Hadron Collider at CERN, the other being ATLAS.
+It's optimized for the search of new physics, in particular:
+\begin{itemize}
+	\item Higgs Physics: photons and leptons detection, decay vertex reconstruction
+	\item Jet Physics: track and jet reconstruction with fine granularity
+	\item Dark Matter, SUSY and other new physics research
+	\item Exploration of physics at the TeV scale
+\end{itemize}
+
+In collider physics we often work in an environment with an obvious simmetry: the beam axis.
+When choosing a coordinate system one would be tempted to use spherical or cilindrical coordinates.
+Unfortunately these corrdinates are not invariant with respect to lorentz transformations, making it unsuitable to use.
+
+A common base used is instead the $\left(\pt,\psrap,\polang\right)$.
+This three variables are related to the spherical coordinates $\left(p,\theta,\polang\right)$ with the formulas
+
+
+\begin{align}
+	\pt&=p\cdot\sin{\theta}\\
+	\psrap&=-\ln(\tan{\frac{\theta}{2}})=\mathrm{arctanh}\left(\frac{p_L}{|p|}\right)\\
+	\polang&=\polang
+	\label{eq:pt_eta_phi}
+\end{align}
+
+The advantage of this coordinate system is that difference in \psrap, unlike difference in $\theta$ are Lorentz invariants for boosts along the beam axis.
+
+%TODO usual CMS image
+
+CMS is structured as a cilindrical detector, composed by various layers with different responsabilities.
+
+%TODO trasverse CMS image
+The innermost layer is the tracker.
+The tracker is designed to provide high resolution track reconstruction, as well as primary and secondary vertex (primary particle decays) reconstruction.
+Inside the tracker is split in two different subregions according to the distance from the beam spot.
+The innermost one is a silicon pixel tracker, while externally there is a silicon microstrips tracker.
+The separation is both to increase the resolution when close to the event and to account for the higher flux of particles at lower radii.
+The tracker provides a momentum resolution between \num{1} and \SI{10}{\percent}, depending on the momentum and pseudorapidity of the particles, and an trasversal impact parameter resolutions between \num{10} and \SI{100}{\micro\m}.
+
+After the tracker is the ElectroMagnetic calorimeter (ECAL).
+The ECAL is made with 80000 PbWO4 scintillating crystals distributed between the barrel and the endcap.
+The main function of the ECAL is intercepting electrons and photons and collecting and thus estimating their energy.
+CMS' ECAL can reach a resolution of $\frac{\SI{2.8}{\percent}}{\sqrt{E}}\oplus\frac{0.12}{E}\oplus\SI{0.30}{\percent}$.
+
+The next layer is the Hadronic Calorimeter (HCAL).
+The HCAL is needed to measure the energy of hadrons, which due to the differents interactions produce a signal deeper in the detector.
+To avoid losing energy due to particles traversing the whole volume of the detector, the HCAL is made of alternating layers of brass (or steel), which slows down particles, and liquid scintillator material to read the energy.
+The HCAL resolution is $\frac{\SI{70}{\percent}}{\sqrt{E}}\oplus\SI{7}{\percent}$.
+
+All the previous layers were placed inside the solenoid that gives the name to the experiment.
+The solenoid can produce a magnetic field of up to \SI{4}{\tesla}.
+The particles from the interaction are curved by the action of the magnetic field, with a radius depending on their trasversal momentum.
+Using the signal that the particles leave in the tracker, we can measure the radius and thus the \pt.
+
+Outside the solenoid (but embedded in the return yoke) are the muon chambers.
+The muon chambers are of three different types: Drift Tubes (in the barrel), Cathode Strip Chambers (in the endcaps) and Resistive Plate Chambers.
+The specialized muon detectors are the outermost layer because we expect that the only particles able to pass through both calorimeters and the iron return yoke are the muons, giving us a clean signal.
+

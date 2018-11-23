@@ -1,0 +1,26 @@
+\subsubsection{Separation of signal from pileup \Pgm}
+\label{subsubsec:pil_rej}
+
+For the analysis it is necessary to separe \Pgm coming from pileup vertices from \Pgm coming from the main one.
+This is accomplished using the \Pgm track's longitudinal impact parameter dz with respect to the main primary vertex.
+The main primary vertex was selected by choosing the one that minimized the difference between the decay total momentum and the vector from the candidate to the secondary vertex.
+During the analysis it was found that this method gave the best results in term of pileup rejection.
+\draft{Era il dz medio, ma poi Alberto ha dovuto fare lo stesso e ha trovato gli algoritmi diciamo "canonici" usati per queste analisi. Il metodo ha il vantaggio che con un vertice primario disponibile posso usare la funzione dZ del codice di Paolo, quindi non e' piu' come all'inizio che usavo la differenza dei vertici primari, idea che avevamo scartato.}
+
+On the Monte Carlo samples, where we can indentify a track as being from pileup, we plotted the dz distribution in the two cases. 
+The results can be seen in \fig{gr:dz}.
+
+\inputgraph{dz}
+
+As we can see, pileup tracks have a largely different distributions, with a much higher variance as we expected.
+Signal tracks instead have a much narrower distribution and are concentrated in an area of size \SI{\sim 0.5}{\cm}.
+
+To select a cut to apply to the impact parameters of \Pgm when working with real data we have to consider the signal efficiency, that is how much signal we are throwing away on average by narrowing the cut, and the false positive efficiency, how much background we are instead pulling in by enlarging it.
+As with the previous sections MVA, a good way to display these values is the ROC curve, shown in \autoref{gr:dz_roc}.
+The main values as function of the cut size are also shown in \autoref{tab:dz_cut}.
+
+\inputgraph{dz_roc}
+
+\inputtab{dz_cut}
+
+The selected size for the cut was in the end chosen to be 0.4, which implies a signal efficiency of \SI{96.2}{\percent} a a false positive efficiency of \SI{5.1}{\percent}.

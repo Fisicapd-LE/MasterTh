@@ -1,0 +1,57 @@
+\subsection{Tag: impact parameter}
+\label{subsec:tag_impact_par}
+
+The first tag used is the impact parameter (\dxy from now on) of the \Pgm.
+We shall here explain that the \Pgm impact parameter is correlated with the proper decay time of its ancestor particle.
+This makes it a good handle to recognize \Pgm coming from a \Pqb decay, as B-mesons have a greater mean life than other lighter mesons.
+
+\subload{impact_par}
+
+\subload{dxyct}
+
+\subsubsection{Use as a tagging variable}
+\label{subsubsec:imppar_use}
+
+We want to fit the data with a distribution that is the sum of 4 mutually exclusive processes, corresponding to the decay categories we have talked about in the previous sections.
+Each category  has a particular shape that allow us to recognize it among the others.
+Ideally we would like the \dxy distributions to be as different as possible among the categories, to reduce the correlations between the linear combination parameters in the total model.
+
+The models are obtained from the Monte Carlo samples, with a binned fit over the \dxy distributions.
+Every distribution is fitted with a sum of two exponentials decays with different mean lifes and variable weight.
+This model was found able to fit all the distributions in all the MC samples, with the caveat that in case of low statistics the longer exponential ended up having a very large error on its decay time, due to the lack of points in the region where it'd be dominant.
+
+In the models we are forced to assume that the distribution is the same both for signal and pileup \Pgm as our model samples does not contain generation informations for the pileup \Pgm. 
+
+A problem noticed in the early experiments with the fit was that at lower values of \dxy the ditribution showed a different behaviour from what we expected, that we could not reproduce properly by adding terms in the fit function.
+In addition to the two exponentials, at low \dxy there was a gaussian term with mean equal to 0 and a smaller peak. 
+Both the width of the 0-gaussian and the position of the smaller peak were functions of \exy (see \fig{gr:dxyvsexy}) \draft{non giustificato? Nel senso che devo fare una figura migliore o ho sbagliato a tagliare?}, which would force us to execute the fit in 2 dimensions.
+After enough multiples of \exy the distributions converged to what we described in the previous paragraph.
+The solution we devised was simply to confine the \exy effects to low \dxy values, by placing an upper limit (\SI{0.005}{\cm}) on the \exy accepted, and limit our analysis to \Pgm with $\dxy > 0.02$, where the distributions were independent on the resolution.
+
+\inputgraph{dxyvsexy}
+
+The models from each Monte Carlo sample were then compared with each other (Table \ref{tab:dxymod_comp}) to see wheter the parameters were compatible and in that case merge the distributions and refit with improved statistics and precision.
+The first three categories were found to be compatible, while the fourth, the fake \Pgm, were not and had to be used with special care as it will be explained in a later section.
+
+\autoref{gr:dxy_models} show the final fitted models in the merged dataset, with the fit superimposed.
+
+\inputgraph{dxy_models}
+
+\inputtab{dxymod_comp}
+
+From both \autoref{gr:dxy_signal_superimp} and \autoref{tab:dxymod_comp} we can notice that the direct and indirect \Pgm categories have very similar models. 
+If we simply fitted as a sum of all the terms we would end up with a very large correlation between the weights of the two distributions, which would increase the absolute error in them both. 
+Fortunately, both of these distributions are used as signal, allowing us to define the model as a function of the sum and the ratio of the two weight, instead of keeping them independent.
+
+For reasons that will be clear later (\autoref{subsec:tag_fake_mva}), we will perform the final fit on windows of \pt and \psrap.
+We cannot be sure that the distributions stay the same in each window, so the models are interpolated separately.
+The windows used are the one already introduced in \autoref{tab:muon_cuts}.
+\autoref{gr:dxy_models_windows} shows all of the models, with each canvas representing one particular selection window.
+
+\inputgraph{dxy_models_windows}
+\draft{ecco il vero problema dell'analisi, dobbiamo discuterne}
+
+\draft{Maybe here example of fit of MC models over MC data?}
+
+It is important to note that while the distributions are different enough for a fit to converge (aside for the aforementioned signal categories), the correlations are still big enough to generate large uncertainties in the results of the fit.
+This problem will be solved with the help of the additional tagging variables.

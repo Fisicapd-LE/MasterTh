@@ -1,0 +1,41 @@
+\documentclass[a4paper,11pt]{article}
+
+\input{latex/preamble/info.tex}
+
+\input{latex/preamble/packages.tex}
+
+\DeclareGraphicsExtensions{.pdf, .png, .jpg} % Se due immagini hanno lo stesso nome sceglile secondo l'ordine di filetype qui
+
+\input{latex/preamble/macros.tex}
+
+\pagestyle{fancy} 
+
+
+%////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+% Fine dei dati iniziali per il latex: il documento finale inizierà da qui
+\begin{document}
+
+\input{./latex/section/relation_title}
+
+\draft{TODO: add better captions to figures and tables}
+
+\draft{TODO: decisamente devo sistemare i grafic, sono attualmente alla rinfusa}
+
+\draft{TODO: add intro+cms+bph}
+
+\draft{TODO: add more bibliography, i used more than just the kernel estimation as a document...}
+
+\subimport{latex/section/}{chapters}
+
+\clearpage
+
+\begin{appendix}
+\subimport{latex/section/}{appendix}
+\end{appendix}
+
+\clearpage
+
+\input{./latex/section/bibliography}
+
+\end{document}

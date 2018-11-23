@@ -1,0 +1,4 @@
+Cut	Events	$empty
+total	\num{6.2323+-0.0007e7}	$empty
+HLT DoubleMu4\_JpsiTrk\_Displaced	\num{1.4290+-0.004e7}	\autoref{gr:bmass@1uncut}
+secondary vertex quality	\num{5.346+-0.002e6}	\autoref{gr:bmass@2cut}

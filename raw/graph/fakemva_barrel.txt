@@ -1,0 +1,1 @@
+Fitted distributions of the fake rejection MVA, for muons in barrel

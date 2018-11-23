@@ -1,0 +1,7 @@
+#!/bin/bash
+
+shopt -s extglob
+
+if compgen -G "$1" > /dev/null
+then ls -v $1
+fi

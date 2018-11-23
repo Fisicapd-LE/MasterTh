@@ -1,0 +1,87 @@
+\section{Analysis methods}
+\label{sec:method}
+
+As stated in the previous chapters, the objective of this thesis is the measure of the $\Pp\Pp \to \Pqb \Paqb X$ cross-section in the collision in the Large Hadron Collider.
+The analysis relies on having a fully reconstructed secondary B-meson vertex in the selected event and uses the decay of a \Pqb quark into a \Pgm.
+
+For a normal LHC collision, the probability of finding a \Pgm (\Pgm) from a \Pqb quark decay is a sum of the probabilities of many processes, as the \Pgm can be produced by the virtual W from the b quark decay ("direct" \Pgm), coming from the decay of a particle coupled to the \PW (such as a \Pgt or a charmed meson) or from the decay of the quark the \Pqb decayed into (usually a \Pqc).
+Since not all the processes are mutually exclusive, to compute the probability we would be forced to use combinatorial terms.
+In our case we are interested in the total number of such \Pgm collected after enough events, and this allows us to ignore the combinatorial factors, which are integrated in a term called $B_{\Pgm}$ that represents the average number of \Pgm produced in a decay of a \Pqb quark.
+
+Ignoring for the moment non-b background, the number of \Pgm where the B+ and the \Pgm come from two different collisions recored in the same bunch crossing ("pileup" \Pgm) is :
+\begin{equation}
+	\begin{split}
+	N_{\Pgm}&=N_0\cdot N_{PU}\cdot\frac{\xsec(\Pp\Pp \to \Pqb \Paqb X)}{\xsec(\Pp\Pp \to X)}\cdot 2B_{\Pgm}\cdot\varepsilon_{detection} \\
+	&=N_0\cdot N_{PU}\cdot R_{\Pqb}\cdot 2B_{\Pgm}\cdot\varepsilon_{detection}
+	\end{split}
+	\label{eq:xsec-pil}
+\end{equation}
+
+where $N_0$ is the number of events with a fully reconstructed B-meson, $N_{PU}$ is the number of reconstructed $\Pp\Pp$ collisions ("primary vertices") excluding the one with the \PBp and is equal to $N_{PV}-1$, $\varepsilon_{detection}$ is the detection probability of a \Pgm from that specific decay and $\xsec(\Pp\Pp\to\Pqb\Paqb X)$ is the probability of a \Pqb\Paqb pair being produced in a $\Pp\Pp$ collision. 
+We also used in the last passage the factor $R_{\Pqb}$, which relates the cross-section we want to the so called "minimum bias cross-section", a well known parameter of LHC and the CMS detector that includes the actual total inelastic cross-section of the proton scattering and the efficiency in the reconstruction of the vertex.
+This parameter is what we will actually measure in the analysis.
+
+If we restrict the analysis to the \Pgm that come from the same vertex as a reconstructed B-meson ("signal" \Pgm), the number (called here $N_{\Pgm, osb}$, for opposite side \Pqb) is instead
+
+\begin{equation}
+	N_{\Pgm, osb}=N_{0}\cdot B_{\Pgm}\cdot\varepsilon_{detection}
+	\label{eq:xsec-sig}
+\end{equation}
+
+As we can see, we lost the factors pertaining to the b cross-section, as \Pqb quarks are mostly produced in opposite flavor pairs at the LHC ($\Pqt\Paqt$ couples where one of the \Pqt does not decay into a \Pqb are negligible from what we see in our data) and we are already requiring the presence of a first one by selecting vertices with a B-meson.\\
+
+The ratio of these two quantities contains our $R_{\Pqb}$ factor and is independent on $B_{\Pgm}$ and $\varepsilon_{detection}$. 
+Assuming for now that $N_{PV}$ is a constant, we have
+
+\begin{equation}
+	\frac{N_{\Pgm}}{N_{\Pgm, osb}}=2\left(N_{PV, event} - 1\right)\cdot R_{\Pqb}
+	\label{eq:raw_ratio}
+\end{equation}
+
+In reality the number of reconstructed primary vertices is different (but known) in each event, following a distribution that is roughly a poissonian. 
+The final formula for $R_{\Pqb}$ is then
+
+\begin{equation}
+	R_{\Pqb}=\frac{1}{2}\frac{\sum_{k}\frac{N^k_{\Pgm}}{\left(N^k_{PV, event} - 1\right)}}{\sum_{k}N^k_{\Pgm, osb}}
+	\label{eq:final_method}
+\end{equation}
+
+\subsection{Signal and background sources}
+\label{subsec:sig_bkg}
+
+All the above equations are ignoring background sources, as we are assuming that all the \Pgm in the event are derived from a \Pqb decay, which obviously doesn't hold for a real event.
+We need to use various tagging variables to be able to count only \Pgm produced in a \Pqb decay.
+
+We group our events in four categories (two signal and two background):
+\begin{itemize}
+	\item $\Pqb\to\Pgm$, direct \Pgm, as shown in \fig{img:decays_feyn@1direct}
+	\item $\Pqb\to X\to\Pgm$, non-prompt \Pgm, as shown in Fig \ref{img:decays_feyn@casc_v1} and \ref{img:decays_feyn@casc_v2}
+	\item $\Pqc\to\Pgm$, prompt charm hadron decay, as shown in \fig{img:decays_feyn@charm}
+	\item "fake" \Pgm, hadrons identified as \Pgm inside the CMS track reconstruction algorithms. This includes charged hadrons crossing all the detector material and reaching the \Pgm chambers ("punch through, sail through"), and \Pgm from the leptonic or semileptonic decays of pions and kaons\draft{(Nel senso che nel tracker sono adroni ma poi decadono e vannoe nelle camere immagino? Io li ho sempre considerati non mu come traccie)}. The background from \PgU, \PWpm or \PZz decays is negligible.
+\end{itemize}
+
+%TODO decays
+\inputimg{decays_feyn}
+
+\inputtab{raw_counts}
+
+\subsection{Discrimination of signal from background}
+
+For the separation of signal from background we mainly use three different tags. The tags are only outlined here but will be explained more throughly in \autoref{sec:tags}.
+
+The first one is the output of an MVA, trained to reject fake \Pgm using variables linked to the quality of the track reconstruction (a Deep Neural Network to be more precise).
+Usually these kinds of MVA are used as a selection for the tracks, to reject as many fake \Pgm as possible while minimizing the number of real \Pgm rejected.
+This means that the output distributions for fake and real \Pgm have to be as different as possible, with the bulk of the distribution as close as possible to the opposite sides of the codomain of the output.
+This makes the variable a good fit (\draft{cambiare termine, pessima scelta}) for our use case.
+Using the MC directly as a model, without trying to describe analitically the shape of the distribution, we superimpose the distributions on top of the data and from the result of the fit we extract the number of fakes in the sample.
+
+A second variable used is another DNN, trained on isolation based variables (isolation is a measure of how many other tracks are around the track we are reconstructing as \Pgm).
+We notice that isolation seemed to be a good tag to select direct \Pgm from other categories.
+The use of this variable is very similar to the fake rejection MVA, fitting the output to MC models.
+
+The main tag used in the thesis is the impact parameter, already defined before. 
+Since B-hadrons typically have a longer mean life, the distribution of the impact parameter for the \Pgm coming from their decay is expected to have an higher mean.
+Using generated Monte Carlo samples, we extract the distributions separed by decay and fit them with an appropriate model.
+The data is then fitted with a linear combination of these models.
+
+\subload{reco_ver}

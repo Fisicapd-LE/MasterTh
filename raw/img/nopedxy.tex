@@ -1,0 +1,16 @@
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-16.159619604484476,-14.923571791695512) rectangle (30.97438358182455,14.34744306841241);
+\draw [shift={(0.13,0)},line width=1.6pt,fill=black,fill opacity=0.10000000149011612] (0,0) -- (0:3.1955256397497647) arc (0:31.025519834969714:3.1955256397497647) -- cycle;
+\draw [->,line width=2pt,color=black] (-8.2,0) -- (0.13,0);
+\draw [->,line width=2pt,color=black] (0.13,0) -- (8.31,4.92);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt,color=black,domain=-16.159619604484476:30.97438358182455] plot(\x,{(--0.6396-4.92*\x)/-8.18});
+\draw [line width=2pt,color=black] (-8.2,0)-- (-5.987072349504163,-3.6792171099707196);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt,color=black,domain=-8.2:30.97438358182455] plot(\x,{(-0-0*\x)/8.33});
+%\begin{scriptsize}
+\draw [fill=black] (-8.2,0) circle (10pt);
+\draw[color=black] (-7.81929768473759,0.68657095848213) node {$PV$};
+\draw [fill=black] (-5.987072349504163,-3.6792171099707196) circle (8pt);
+\draw[color=black] (-7.4038793515701204,-1.7100732713301996) node {$b$};
+\draw[color=black] (2.342473849666662,0.7185262148796279) node {$\psi$};
+%\end{scriptsize}
+\end{tikzpicture}

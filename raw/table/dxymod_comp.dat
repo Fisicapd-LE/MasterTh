@@ -1,0 +1,11 @@
+Parameter	Sample#\PBz	Sample#\PsB	Sample#\PBp
+direct: weight ratio	\num{0.31 +- 0.01}	\num{0.31 +- 0.01}	\num{0.36 +- 0.02}
+direct: $\tau_1$ [\si{\cm}]	\num{0.0139 +- 0.0005}	\num{0.0130 +- 0.0004}	\num{0.0130 +- 0.0007}
+direct: $\tau_2$ [\si{\cm}]	\num{0.0351 +- 0.0005}	\num{0.0340 +- 0.0004}	\num{0.0367 +- 0.001}
+indirect: weight ratio	\num{0.47 +- 0.02}	\num{0.37 +- 0.02}	\num{0.11 +- 0.02}
+indirect: $\tau_1$ [\si{\cm}]	\num{0.0153 +- 0.0006}	\num{0.0160 +- 0.0007}	\num{0.005 +- 0.001}
+indirect: $\tau_2$ [\si{\cm}]	\num{0.0361 +- 0.0009}	\num{0.0332 +- 0.0007}	\num{0.0311 +- 0.001}
+from charm: $\tau_1$ [\si{\cm}]	\num{0.020 +- 0.001}	\num{0.0192 +- 0.0009}	\num{0.017 +- 0.002}
+fake: weight ratio	\num{0.14 +- 0.02}	\num{0.76 +- 0.02}	\num{0.4 +- 0.1}
+fake: $\tau_1$ [\si{\cm}]	\num{0.008 +- 0.002}	\num{0.0185 +- 0.0006}	\num{0.03 +- 0.03}
+fake: $\tau_2$ [\si{\cm}]	\num{0.0310 +- 0.0009}	\num{0.052 +- 0.004}	\num{0.042 +- 0.003}

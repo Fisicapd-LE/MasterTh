@@ -1,0 +1,9 @@
+\feynmandiagram[layered layout, horizontal=i1 to a] {
+	i1 [particle=\Pqb] -- [fermion] a -- [fermion] f1 [particle=\Pqc],
+	a -- [boson, edge label=\PWm] b,
+	b -- [anti fermion] f3 [particle=\Pagngt],
+	b -- [fermion, edge label=\Pgtm] c -- [fermion] f4 [particle=\Pgngt],
+	c -- [boson, edge label=\PWm] d,
+	d -- [anti fermion] f5 [particle=\Pagngm],
+	d -- [fermion] f6 [particle=\Pgmm],
+};

@@ -1,0 +1,5 @@
+Decay cat	Iso fraction	Comp. of iso sample	Comp. of MC sample
+$\Pqb\to\Pgm$	\num{0.1331+-0.0009}	\num{0.844+-0.002}	\num{0.626}
+$\Pqb\to X\to\Pgm$	\num{0.0436+-0.001}	\num{0.084+-0.002}	\num{0.191}
+$\Pqc\to\Pgm$	\num{0.063+-0.002}	\num{0.03+-0.001}	\num{0.0471}
+fake	\num{0.031+-0.001}	\num{0.042+-0.001}	\num{0.131}

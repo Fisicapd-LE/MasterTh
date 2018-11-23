@@ -1,0 +1,1 @@
+Definition of the impact parameter of a track, here called $b$

@@ -1,0 +1,37 @@
+\subsection{Tag: fake rejection MVA}
+\label{subsec:tag_fake_mva}
+
+The second tag used is what we will refer here as "fake rejection MVA".
+This MVA was developed to reduce the occurrence of fakes in a separate analysis, but showed great potential for us to help our main fit converge.
+
+This variable represents the output of a Deep Neural Network (DNN) trained to reject fake \Pgm based on the quality of the track fit.
+In particular, this MVA uses as input variables:
+\begin{itemize}
+	\item Quality of track fit
+		\begin{itemize}
+			\item in the \Pgm chambers
+			\item in the tracker
+			\item matching of the two
+		\end{itemize}
+	\item muon $p_T$
+	\item muon $\eta$
+\end{itemize}
+
+More detailed informations, as well as the distributions of the input variables for fake and real \Pgm, can be found in the \autoref{app:fake_mva_input}.
+
+Since the CMS detector reacts quite differently wheter the \Pgm interacts with the barrel or endcap sections, the MVA was trained separating the \Pgm based on \psrap and trained independently.
+Furthermore, since \pt is an input and we can't assume the same \pt distribution for data and models, to be able to get a good match in the distributions we are forced to fit in \pt windows, as it was already shown in the \autoref{subsec:tag_impact_par}.
+This leaves us with 8 different distributions.
+
+For this variable there was no obvious analytical representation, so we opted to use directly the MC distributions as a modelto be fitted on the data.
+Again, we searched the MC samples for difference in the distributions, and in the end merged the samples for the final model.
+We applied a variable kernel density estimation (\cite{bib:kernel_est}) to distribution from the Monte Carlo sample.
+
+\autoref{gr:fakemva_models_all} shows all the models for this variable.
+
+%TODO fakemva_models_all
+\draft{non li ho pronti, solo separati e non mi pare il caso}
+
+From the fit of this variable it's possible to provide an estimation of the number of the fake \Pgm in the sample which is more precise than what we can get from the impact parameter alone. 
+This number is used to place a constraint on both the fake and real \Pgm weight
+
